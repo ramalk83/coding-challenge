@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Result :</p>
+
+    <script>
+     function borderArr(arr){
+
+    let newArr=[];
+newArr.push("---------------");
+for(i=0;i<arr.length;i++){
+ newArr.push("*"+arr[i]+"*")
+ newArr.push('\n')
+}
+newArr.push("---------------");
+return  newArr;
+
+}
+
+document.getElementById("demo").innerHTML=(borderArr(["Ram","abc","rathna","sakthi","sar","LM","PV"]));
+console.log(borderArr(["Ram","abc","rathna","sakthi","sar","LM","PV"]))
+    </script>
+</body>
+</html>
