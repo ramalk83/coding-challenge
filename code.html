@@ -6,24 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="demo">Result :</p>
+<p id="demo">Result :</p>
+<p id="demo1">Adjacent elements result:</p>
+<p id="demo2">Array total with reduce:</p>
+<script>
 
-    <script>
-     function borderArr(arr){
-
+//string with border
+    function borderArr(arr){
     let newArr=[];
-newArr.push("---------------");
-for(i=0;i<arr.length;i++){
- newArr.push("*"+arr[i]+"*")
- newArr.push('\n')
-}
-newArr.push("---------------");
-return  newArr;
+    newArr.push("---------------");
+    for(i=0;i<arr.length;i++){
+        newArr.push("*"+arr[i]+"*")
+        newArr.push('\n')
+    }
+    newArr.push("---------------");
+    return  newArr;
+    }
 
-}
 
-document.getElementById("demo").innerHTML=(borderArr(["Ram","abc","rathna","sakthi","sar","LM","PV"]));
-console.log(borderArr(["Ram","abc","rathna","sakthi","sar","LM","PV"]))
-    </script>
+//find the pair of adjacent elements that has the largest
+    function adjArr(arr){
+     let maxCount=arr[0]*arr[1]
+     
+     for(i=0;i<arr.length;i++){
+      let newCount=arr[i]*arr[i+1]
+      if(newCount>maxCount)
+      {
+          maxCount=newCount
+      }
+     }
+     return maxCount
+    }
+//Reduce example
+   function reduceArr(...arr){
+   return arr.reduce((total,element)=>{return total+=element})
+   }
+
+document.getElementById("demo").innerHTML=("Result:"+borderArr(["Ram","abc","rathna","sakthi","sar","LM","PV"]));
+document.getElementById("demo1").innerHTML=("Adjacent elements result:"+ adjArr([3,6,-2,-5,7,3]));
+document.getElementById("demo2").innerHTML=("Array total with reduce:  "+reduceArr(1,2,3,4,5,6,7,8,9));
+//console.log(borderArr(["Ram","abc","rathna","sakthi","sar","LM","PV"]))
+</script>
 </body>
 </html>
